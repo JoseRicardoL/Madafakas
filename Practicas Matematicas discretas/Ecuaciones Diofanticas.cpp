@@ -8,6 +8,10 @@ int mcd(int a , int b){
     a = (a < 0) ? -a:a;
     b = (b < 0) ? -b:b;
     t = (a < b) ? a : b;
+    if (t==0)
+    {
+    	t=(a < b) ? b : a;
+	}
     while ( (a % t) || (b % t)) --t;
     return t;
     } 
@@ -43,7 +47,6 @@ int main ()
         SetConsoleTextAttribute(hConsole, 7);
         } 
     p2=1; 
-    if((c%(mcd(a,b)))==0) { 
     for(i=0;p2!=0;i++){ 	
         aux1[i]=0; 	
         aux2[i]=0; 
@@ -76,8 +79,6 @@ int main ()
     	cout<<aux2[i]<<"="<<aux3[i]<<"+"<<aux3[i-1]<<"("<<d*(int(-(aux3[i]/aux1[i])))<<")+"<<aux1[i-1]<<"("<<(int(-(aux3[i-1]/aux1[i-1]))*(int(-(aux3[i]/aux1[i]))))<<")"<<endl;
 		cout<<aux2[i]<<"="<<aux3[i-1]<<"("<<d*(int(-(aux3[i]/aux1[i])))<<")+"<<aux1[i-1]<<"("<<(int(-(aux3[i-1]/aux1[i-1]))*(int(-(aux3[i]/aux1[i]))))+1<<")"<<endl;
 	}
-
-}
 	getch();
     return 0;
 }
